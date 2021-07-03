@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">   
+
+    <title>나</title>
+    <style>
+        body { background-color: rgb(246, 255, 253);
+            display: flex;
+            flex-direction:column;
+            align-items: center;}
+
+        h1 {font-size: 50px;
+            color: powderblue;
+            margin:0; 
+            padding: 10px;   
+            display: inline-block;
+            width:1200px;
+            font-family: 'Gugi', cursive;}
+
+        #box { background-color: rgb(224, 242, 245);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 1200px;
+            height:950px;
+            font-size: 18px;}
+
+        #box1 { display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: rgb(255, 255, 255,0.8);
+            border-radius:10px;
+            margin: 50px;
+            width: 700px;
+            height: 800px;
+            font-family: 'Noto Serif KR', serif;}
+
+        .nav-pills {background-color:rgb(168, 227, 235);}
+
+        #nav {display: flex;
+            justify-content:space-between;
+            background-color:powderblue;
+            font-family: 'Gugi', cursive;
+            font-size: 20px;}   
+
+    </style>
+</head>
+<body>
+    
+<div>
+ <h1>나의 조각 : Piece </h1>
+<!-- 여기부터 네브바입니다 -->
+<div id=nav> 
+    <ul class="nav nav-pills">
+    <li role="presentation" class="active"><a href="{% url 'main1' %}">오늘의 조각</a></li>
+    <li role="presentation"><a href="{% url 'sub1' %}">감정 조각</a></li>
+    <li role="presentation"><a href="{% url 'sub2' %}">나의 조각</a></li>
+    <li role="presentation"><a href="{% url 'sub3' %}">나</a></li>
+    </ul>
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="감정 키워드">
+      </div>
+      <button type="submit" class="btn btn-default">검색</button>
+    </form>
+ </div>
+</div>
+<!-- 여기까지 네브바입니다 -->
+
+<div id="box">
+ <div id="box1">
+     <div style="height: 300px; width:300px; background-color: lavender;margin: 30px;">
+         프로필 사진</div>
+    <form action="" method="POST" style="text-align:right">
+        <div>
+            <label for="name">이름 </label>
+            <input type="text" id="name" name="name" placeholder="NAME"> 
+        </div>
+        <br>
+        <div>
+            <label for="birth">생년월일 </label>
+            <input type="birth" id="birth" name="birth" placeholder="BIRTH"> 
+        </div>
+        <br>
+        <div>
+            <label for="bloodtype">혈액형 </label>
+            <input type="bloodtype" id="bloodtype" name="bloodtype" placeholder="BLOOD TYPE"><br><br>
+            <button type="submit" a href="{% url 'sub3' %}">저장하기</button>
+     </form>
+        </div>
+    </form>
+  </div>
+ </div>
+</body>
+</html>
